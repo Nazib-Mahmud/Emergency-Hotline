@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Service</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="top-header">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo"> 
+      <span>Emergency Service</span>
+    </div>
+    <div class="top-actions">
+      <span class="heart"><img src="assets/heart.png" alt="heart"> <span id="heartCount">0</span></span>
+      <span class="coin"><img src="assets/coin.png" alt="coin"> <span id="coinCount">100</span></span>
+      <button class="copy-btn"><img src="assets/copy.png" alt="copy"> <span id="copyCount">0 Copy</span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="assets/bd-logo.png" class="bd-logo" alt="BD Logo">
+    <h2>জরুরি সেবা ডিরেক্টরি</h2>
+    <p>Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh</p>
+  </section>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Cards -->
+    <section class="cards" id="cardsGrid"></section>
+
+    <!-- History -->
+    <aside class="history">
+      <div class="history-header">
+        <h3>Call History</h3>
+        <button id="clearHistory">Clear</button>
+      </div>
+      <ul id="historyList"></ul>
+    </aside>
+  </main>
+
+  <!-- Template -->
+  <template id="cardTemplate">
+    <div class="card">
+      <div class="card-header">
+        <img class="service-icon" src="assets/service.png" alt="icon">
+        <button class="fav">♡</button>
+      </div>
+      <h4 class="bn-name">সেবার নাম</h4>
+      <p class="en-name">Service Name</p>
+      <p class="number">000</p>
+      <div class="card-footer">
+        <button class="copy-btn">📋 Copy</button>
+        <button class="call-btn">📞 Call</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
