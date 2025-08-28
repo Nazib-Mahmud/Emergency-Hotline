@@ -8,23 +8,25 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Navbar -->
   <header class="header">
     <div class="left">
       <img src="assets/logo.png" alt="Logo" class="logo">
       <h2>Emergency Service</h2>
     </div>
-    <div class="center">
-      <img src="assets/bd-gov.png" class="gov-logo" alt="Gov Logo">
-      <h3>জরুরি সেবা ডিরেক্টরি</h3>
-      <p>Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh</p>
-    </div>
     <div class="right">
-      <span class="heart">❤️ 0</span>
-      <span class="coin">🪙 100</span>
-      <button class="copy-btn-top">2 Copy</button>
+      <span id="heartCount">❤️ 0</span>
+      <span id="coinCount">🪙 100</span>
+      <span id="copyCount">📋 0</span>
     </div>
   </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="./assets/logo-dark.png" alt="Gov Logo" class="hero-logo">
+    <h1>জরুরি সেবা ডিরেক্টরি</h1>
+    <p>Government Emergency Services at Your Fingertip - A Project by Government of the People's Republic of Bangladesh</p>
+  </section>
 
   <!-- Main Layout -->
   <main class="main">
@@ -34,7 +36,7 @@
     <!-- History -->
     <aside class="history">
       <div class="history-header">
-        <h3>Call History</h3>
+        <h3>📞 Call History</h3>
         <button id="clearHistory">Clear</button>
       </div>
       <ul id="historyList"></ul>
@@ -53,7 +55,7 @@
       <p class="number">000</p>
       <span class="tag">ট্যাগ</span>
       <div class="card-footer">
-        <button class="copy-btn">□ Copy</button>
+        <button class="copy-btn">📋 Copy</button>
         <button class="call-btn">📞 Call</button>
       </div>
     </div>
