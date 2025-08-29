@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+/* Base Reset */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 body { background: #f6fff6; color: #222; }
 
 /* Header/Navbar */
@@ -6,13 +10,53 @@ body { background: #f6fff6; color: #222; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #004d25, #006633);
-  color: #fff;
-  padding: 15px 30px;
+  background: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
 }
-.header .left { display: flex; align-items: center; gap: 10px; }
-.header .logo { width: 40px; height: 40px; }
-.header .right { display: flex; gap: 15px; font-size: 14px; }
+
+.header .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .logo {
+  width: 40px;
+  height: 40px;
+}
+
+.header .left h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #006633;
+}
+
+.header .right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header .right span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9f9f9;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #222;
+  border: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.header .right span.copy-badge {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+}
 
 /* Hero Section */
 .hero {
@@ -26,26 +70,58 @@ body { background: #f6fff6; color: #222; }
 .hero p { font-size: 16px; }
 
 /* Main Layout */
-.main { display: flex; gap: 20px; padding: 20px; flex-wrap: wrap; }
+.main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
 
 /* Cards grid */
 .cards { 
-  flex: 3; 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); 
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px; 
 }
 
 /* History */
-.history { flex: 1; background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-.history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.history {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 250px;
+}
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 .history-header h3 { font-size: 16px; }
-.history-header button { background: #27ae60; color: #fff; border: none; padding: 5px 12px; border-radius: 5px; cursor: pointer; }
+.history-header button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 #historyList { list-style: none; font-size: 14px; max-height: 400px; overflow-y: auto; }
 #historyList li { padding: 8px 5px; border-bottom: 1px solid #eee; }
 
 /* Card */
-.card { background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 8px; }
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .card-header { display: flex; justify-content: space-between; align-items: center; }
 .service-icon { width: 40px; height: 40px; }
 .fav { border: none; background: none; font-size: 18px; cursor: pointer; }
@@ -54,19 +130,36 @@ body { background: #f6fff6; color: #222; }
 .number { font-size: 20px; font-weight: bold; }
 .tag { font-size: 12px; color: #666; background: #f2f2f2; padding: 2px 6px; border-radius: 5px; display: inline-block; }
 .card-footer { display: flex; gap: 10px; margin-top: 5px; }
-.copy-btn, .call-btn { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #ccc; cursor: pointer; font-size: 14px; }
+.copy-btn, .call-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+}
 .copy-btn { background: #fff; }
 .call-btn { background: #27ae60; color: #fff; border: none; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .main { flex-direction: column; }
-  .history { order: -1; }
+/* ---------- Responsive ---------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Large screen: 3 cards per row */
-@media (min-width: 1024px) {
+/* Mobile */
+@media (max-width: 576px) {
+  .main {
+    flex-direction: column;   /* History নিচে চলে আসবে */
+  }
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* সব কার্ড এক কলামে */
+  }
+  .history {
+    width: 100%;
+    min-width: unset;
   }
 }
