@@ -144,22 +144,43 @@ body { background: #f6fff6; color: #222; }
 /* ---------- Responsive ---------- */
 
 /* Tablet */
+/* ---------- Responsive ---------- */
+
+/* Tablet */
 @media (max-width: 992px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+  .main {
+    flex-direction: column; /* Tablet এ history নিচে যাবে */
+  }
 }
 
-/* Mobile */
+/* Mobile (max-width 576px): 1 column */
 @media (max-width: 576px) {
   .main {
-    flex-direction: column;   /* History নিচে চলে আসবে */
+    flex-direction: column; /* Mobile এ column হবে */
   }
+
   .cards {
-    grid-template-columns: 1fr; /* সব কার্ড এক কলামে */
+    grid-template-columns: 1fr; /* Mobile এ ১ কলামে card */
   }
+
   .history {
+    width: 100%;  /* history full width নিবে */
+    min-width: auto;
+    margin-top: 15px;
+  }
+
+  .header {
+    flex-direction: column; /* Mobile এ header vertical */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header .right {
     width: 100%;
-    min-width: unset;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
